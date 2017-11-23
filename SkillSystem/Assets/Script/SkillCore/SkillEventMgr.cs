@@ -69,7 +69,7 @@ public class SkillEventMgr
         MoveType m = effect.AddComponent<MoveType>();
 
         Actor target = ActorManager.Instance.Find(data.m_TargetID);
-        m.MoveTo(MoveType.MType.Parabola, target.transform.position,data.m_BulletSpeed, () =>
+        m.MoveTo(MoveType.MType.Bezier, target.transform.position,data.m_BulletSpeed, () =>
             {
                 GameObject.Destroy(effect);
             });

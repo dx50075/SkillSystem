@@ -11,7 +11,8 @@ public class TestSkill : MonoBehaviour {
         SkillSystem.Instance.LoadSkill(text.text);
         SkillEventMgr.Instance.RegisterSkillEvent();
         m_Actor = ActorManager.Instance.CreateActor();
-        CameraManager.Instance.SetTarget(m_Actor.transform);
+        if(CameraManager.Instance != null)
+            CameraManager.Instance.SetTarget(m_Actor.transform);
 
         Actor a = ActorManager.Instance.CreateActor();
         a.SetPos(m_Actor.transform.position + new Vector3(Random.Range(5, 10), 0f, Random.Range(5, 10)));
